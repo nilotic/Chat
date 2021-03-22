@@ -18,19 +18,34 @@ struct HomeView: View {
     // MARK: Public
     var body: some View {
         NavigationView {
-         
-            Group {
-                ScrollView(.horizontal, showsIndicators: false) {
-                    List(0..<10) { number in
-                        Text("\(number)")
-                            .font(.system(size: 16, weight: .semibold))
-//                            .foregroundColor(data.type == page.type ? Color("gray900") : Color("gray600"))
-                            .frame(maxWidth: .infinity)
+            ZStack {
+                ScrollView {
+                    LazyVStack(spacing: 0) {
+                        ForEach(data.items) {
+                            switch $0.data {
+                            case let data as [User]:
+                                Text("\(data.count)")
+
+                            default:
+                                Text("")
+                            }
+                        }
                     }
                 }
                 
+                
+                // Progress
+                if data.isProgressing {
+                    ProgressView()
+                        .progressViewStyle(CircularProgressViewStyle())
+                        .scaleEffect(1.2, anchor: .center)
+                }
             }
-            .navigationBarTitle("Test", displayMode: .large)
+            .navigationBarTitle("Chat with your friends", displayMode: .large)
+            
+        }
+        .onAppear {
+            data.request()
         }
     }
     

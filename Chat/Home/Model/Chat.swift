@@ -47,7 +47,10 @@ extension Chat: Decodable  {
         
         do { user    = try container.decode(User.self,   forKey: .user) }    catch { throw error }
         do { message = try container.decode(String.self, forKey: .message) } catch { throw error }
-        do { date    = try container.decode(Date.self,   forKey: .date) }    catch { throw error }
+        do { date    = try container.decode(Date.self,   forKey: .date) }    catch {
+            throw error
+            
+        }
     }
 }
 

@@ -9,7 +9,8 @@ import SwiftUI
 
 struct User: Identifiable {
     let id: Int
-    let name: String
+    let firstName: String
+    let lastName: String
     let imageURL: URL?
 }
 
@@ -31,16 +32,18 @@ extension User: Decodable  {
     
     private enum Key: String, CodingKey {
         case id
-        case name
+        case firstName
+        case lastName
         case imageURL
     }
     
     init(from decoder: Decoder) throws {
         let container = try decoder.container(keyedBy: Key.self)
         
-        do { id       = try container.decode(Int.self,    forKey: .id) }       catch { throw error }
-        do { name     = try container.decode(String.self, forKey: .name) }     catch { throw error }
-        do { imageURL = try container.decode(URL.self,    forKey: .imageURL) } catch { imageURL = nil }
+        do { id        = try container.decode(Int.self,    forKey: .id) }        catch { throw error }
+        do { firstName = try container.decode(String.self, forKey: .firstName) } catch { throw error }
+        do { lastName  = try container.decode(String.self, forKey: .lastName) }  catch { throw error }
+        do { imageURL  = try container.decode(URL.self,    forKey: .imageURL) }  catch { imageURL = nil }
     }
 }
 
@@ -48,7 +51,7 @@ extension User: Decodable  {
 extension User {
     
     static var placeholder: User {
-        User(id: 0, name: "user0", imageURL: URL(string: "https://github.com/nilotic/Chat/blob/develop/memoji/memoji6.png?raw=true"))
+        User(id: 0, firstName: "Adney", lastName: "Bares", imageURL: URL(string: "https://github.com/nilotic/Chat/blob/develop/memoji/memoji6.png?raw=true"))
     }
 }
 #endif

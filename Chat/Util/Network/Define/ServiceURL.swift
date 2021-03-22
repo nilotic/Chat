@@ -16,8 +16,8 @@ extension ServiceURL {
     
     var rawValue: URL {
         switch self {
-        case .users:  return URL(string: "\(Host.chat(server: server).rawValue)/nilotic/Chat/blob/master/json/users.json")!
-        case .chats:  return URL(string: "\(Host.chat(server: server).rawValue)/nilotic/Chat/blob/master/json/chats.json")!
+        case .users:  return URL(string: "\(Host.chat(server: server).rawValue)/nilotic/Chat/blob/master/json/users.json?raw=true")!
+        case .chats:  return URL(string: "\(Host.chat(server: server).rawValue)/nilotic/Chat/blob/master/json/chats.json?raw=true")!
         }
     }
 }
