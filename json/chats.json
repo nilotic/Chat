@@ -8,7 +8,7 @@
                 "imageURL": "https://github.com/nilotic/Chat/blob/develop/memoji/memoji6.png?raw=true"
             },
             "message": "Hey there! What's up? Is everything...",
-            "date": "2021-01-07T18:32-04:00"
+            "date": "2021-01-07T18:32+04:00"
         },
         {
             "user": {
@@ -38,7 +38,7 @@
                 "imageURL": "https://github.com/nilotic/Chat/blob/develop/memoji/memoji9.png?raw=true"
             },
             "message": "Hi! I went shopping today and fou...",
-            "date": "2021-02-04T15:55-14:00"
+            "date": "2021-02-04T15:55+14:00"
         },
         {
             "user": {
@@ -78,7 +78,7 @@
                 "imageURL": "https://github.com/nilotic/Chat/blob/develop/memoji/memoji13.png?raw=true"
             },
             "message": "Can I call you back later? I'm in a...",
-            "date": "2021-02-14T20:50-01:00"
+            "date": "2021-02-14T20:50+01:00"
         },
         {
             "user": {
@@ -88,7 +88,7 @@
                 "imageURL": "https://github.com/nilotic/Chat/blob/develop/memoji/memoji14.png?raw=true"
             },
             "message": "Hi! I went shopping today and fou...",
-            "date": "2021-03-14T13:50-02:00"
+            "date": "2021-03-14T13:50+02:00"
         }
     ]
 }
