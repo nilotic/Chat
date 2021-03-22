@@ -1,0 +1,88 @@
+{
+    "users": [
+        {
+            "id": 0,
+            "firstName": "Adney",
+            "lastName": "Bares",
+            "imageURL": "https://github.com/nilotic/Chat/blob/develop/memoji/memoji1.png?raw=true"
+        },
+        {
+            "id": 1,
+            "firstName": "Aldo",
+            "lastName": "Barrell",
+            "imageURL": "https://github.com/nilotic/Chat/blob/develop/memoji/memoji2.png?raw=true"
+        },
+        {
+            "id": 2,
+            "firstName": "Anson",
+            "lastName": "Bailey",
+            "imageURL": "https://github.com/nilotic/Chat/blob/develop/memoji/memoji3.png?raw=true"
+        },
+        {
+            "id": 3,
+            "firstName": "Brice",
+            "lastName": "Davies",
+            "imageURL": "https://github.com/nilotic/Chat/blob/develop/memoji/memoji4.png?raw=true"
+        },
+        {
+            "id": 4,
+            "firstName": "Corky",
+            "lastName": "Fisher",
+            "imageURL": "https://github.com/nilotic/Chat/blob/develop/memoji/memoji5.png?raw=true"
+        },
+        {
+            "id": 5,
+            "firstName": "Daelen",
+            "lastName": "Ford",
+            "imageURL": "https://github.com/nilotic/Chat/blob/develop/memoji/memoji6.png?raw=true"
+        },
+        {
+            "id": 6,
+            "firstName": "Dana",
+            "lastName": "Gibson",
+            "imageURL": "https://github.com/nilotic/Chat/blob/develop/memoji/memoji7.png?raw=true"
+        },
+        {
+            "id": 7,
+            "firstName": "Bryce",
+            "lastName": "Paul",
+            "imageURL": "https://github.com/nilotic/Chat/blob/develop/memoji/memoji8.png?raw=true"
+        },
+        {
+            "id": 8,
+            "firstName": "Gala",
+            "lastName": "Hill",
+            "imageURL": "https://github.com/nilotic/Chat/blob/develop/memoji/memoji9.png?raw=true"
+        },
+        {
+            "id": 9,
+            "firstName": "Justin",
+            "lastName": "O'Moore",
+            "imageURL": "https://github.com/nilotic/Chat/blob/develop/memoji/memoji10.png?raw=true"
+        },
+        {
+            "id": 10,
+            "firstName": "Alaya",
+            "lastName": "Cordova",
+            "imageURL": "https://github.com/nilotic/Chat/blob/develop/memoji/memoji11.png?raw=true"
+        },
+        {
+            "id": 11,
+            "firstName": "Eathan",
+            "lastName": "Sheridan",
+            "imageURL": "https://github.com/nilotic/Chat/blob/develop/memoji/memoji12.png?raw=true"
+        },
+        {
+            "id": 12,
+            "firstName": "Cecily",
+            "lastName": "Trujillo",
+            "imageURL": "https://github.com/nilotic/Chat/blob/develop/memoji/memoji13.png?raw=true"
+        },
+        {
+            "id": 13,
+            "firstName": "Komal",
+            "lastName": "Orr",
+            "imageURL": "https://github.com/nilotic/Chat/blob/develop/memoji/memoji14.png?raw=true"
+        }
+    ]
+}
