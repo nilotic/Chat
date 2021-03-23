@@ -18,17 +18,16 @@ struct UsersCell: View {
     // MARK: Public
     var body: some View {
         ScrollView(.horizontal, showsIndicators: false) {
-            LazyHStack {
+            LazyHStack(spacing: 17) {
                 searchIcon
                             
                 ForEach(data) {
                     UserCell(data: $0)
                 }
             }
-            .frame(height: 60)
-            .padding(.horizontal, 40)
+            .padding(.horizontal, 38)
         }
-        .frame(height: 100)
+        .frame(height: 50)
     }
     
     // MARK: Private
@@ -37,10 +36,12 @@ struct UsersCell: View {
             Color("blue300")
             
             Image(systemName: "magnifyingglass")
+                .resizable()
+                .frame(width: 20, height: 20)
                 .foregroundColor(.white)
         }
-        .frame(width: 40, height: 40)
-        .cornerRadius(20)
+        .frame(width: 50, height: 50)
+        .cornerRadius(25)
     }
 }
 

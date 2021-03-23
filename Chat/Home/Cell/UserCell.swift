@@ -14,7 +14,7 @@ struct UserCell: View {
     let data: User
     
     // MARK: Private
-    private let colors = [Color("blue100"), Color("blue200"), Color("blue300"), Color("blue400"),
+    private let colors = [Color("blue100"), Color("blue200"), Color("blue300"),
                           Color("orange100"),
                           Color("pink100"), Color("pink200"), Color("pink300"),
                           Color("purple100"), Color("purple200"),
@@ -25,9 +25,9 @@ struct UserCell: View {
     // MARK: Public
     var body: some View {
         ImageView(url: data.imageURL)
-            .frame(width: 40, height: 40)
+            .frame(width: 50, height: 50)
             .background(colors.randomElement())
-            .cornerRadius(20)
+            .cornerRadius(25)
     }
 }
 

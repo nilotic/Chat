@@ -17,7 +17,7 @@ struct ImageView: View {
     // MARK: Private
     @State private var cancelable: AnyCancellable? = nil
     @State private var image: UIImage?             = nil
-    
+    @State private var isProgressing               = false
     
     // MARK: - View
     // MARK: Public
@@ -31,12 +31,21 @@ struct ImageView: View {
                         .frame(width: $0.size.width, height: $0.size.height)
                 }
             }
+            
+            if isProgressing {
+                ProgressView()
+                    .progressViewStyle(CircularProgressViewStyle())
+                    .scaleEffect(1, anchor: .center)
+            }
         }
         .onAppear {
+            isProgressing = true
+
             cancelable = ImageDataManager.shared.download(url: self.url)
                 .sink(receiveCompletion: { error in
                     
                 }, receiveValue: {
+                    self.isProgressing = false
                     self.image = $0
                 })
         }

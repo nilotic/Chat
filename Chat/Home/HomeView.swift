@@ -13,21 +13,29 @@ struct HomeView: View {
     // MARK: Public
     @ObservedObject var data = HomeData()
     
+
+    // MARK: - Iniitalizer
+    init() {
+        UINavigationBar.appearance().largeTitleTextAttributes = [.foregroundColor: #colorLiteral(red: 1.0, green: 1.0, blue: 1.0, alpha: 1.0)]
+        UINavigationBar.appearance().layoutMargins.left = 36
+    }
+
     
     // MARK: - View
     // MARK: Public
     var body: some View {
         NavigationView {
             ZStack {
+                Color("blue400")
+                    .edgesIgnoringSafeArea(.all)
+                
                 ScrollView {
                     LazyVStack(spacing: 0) {
                         ForEach(data.items) {
                             switch $0.data {
-                            case let data as [User]:
-                                Text("\(data.count)")
-
-                            default:
-                                Text("")
+                            case let data as [User]:    UsersCell(data: data)
+//                            case let data as [Chat]:    ChatsCell(data: data)
+                            default:                    Text("")
                             }
                         }
                     }
@@ -41,16 +49,12 @@ struct HomeView: View {
                         .scaleEffect(1.2, anchor: .center)
                 }
             }
-            .navigationBarTitle("Chat with your friends", displayMode: .large)
-            
+            .navigationBarTitle("Chat", displayMode: .large)
         }
         .onAppear {
             data.request()
         }
     }
-    
-    // MARK: Private
-    
 }
 
 #if DEBUG
