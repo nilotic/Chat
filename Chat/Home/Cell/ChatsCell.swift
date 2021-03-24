@@ -20,13 +20,14 @@ struct ChatsCell: View {
         ZStack {
             Color(.white)
             
-            LazyVStack {
+            LazyVStack(spacing: 43) {
                 ForEach(data) {
                     ChatCell(data: $0)
                 }
             }
+            .padding(.vertical, 61)
         }
-        .clipShape(RoundedShape(radius: 30, corners: [.topLeft, .topRight]))
+        .clipShape(RoundedShape(radius: 38, corners: [.topLeft, .topRight]))
     }
 }
 

@@ -41,14 +41,14 @@ struct ChatCell: View {
     var body: some View {
         HStack(spacing: 10) {
             ImageView(url: data.user.imageURL)
-                .frame(width: 70, height: 70)
+                .frame(width: 66, height: 66)
                 .background(colors.randomElement())
-                .cornerRadius(35)
+                .cornerRadius(33)
 
-            VStack(spacing: 10) {
+            VStack(spacing: 7) {
                 HStack {
                     Text(name)
-                        .font(.system(size: 17, weight: .semibold))
+                        .font(.system(size: 16, weight: .semibold))
                         .foregroundColor(Color("purple500"))
                         .frame(maxWidth: .infinity, alignment: .leading)
                     
@@ -60,14 +60,15 @@ struct ChatCell: View {
                 }
                 
                 Text(data.message)
-                    .font(.system(size: 15, weight: .regular))
+                    .font(.system(size: 14, weight: .regular))
                     .foregroundColor(Color("purple400"))
                     .lineLimit(1)
                     .truncationMode(.tail)
                     .frame(maxWidth: .infinity, alignment: .leading)
             }
+            .padding(EdgeInsets(top: 0, leading: 3, bottom: 10, trailing: 0))
         }
-        .padding(.horizontal, 30)
+        .padding(.horizontal, 38)
     }
 }
 
