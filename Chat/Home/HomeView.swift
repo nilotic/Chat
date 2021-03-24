@@ -50,8 +50,9 @@ struct HomeView: View {
                         .scaleEffect(1.2, anchor: .center)
                 }
             }
-            .navigationBarTitle("Chat", displayMode: .large)
+            .navigationTitle("Chat")
         }
+        .navigationViewStyle(StackNavigationViewStyle())
         .onAppear {
             data.request()
         }
