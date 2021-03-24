@@ -7,20 +7,23 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		B7003B6E260AD8AB0021AD5D /* ChatsCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7003B6D260AD8AB0021AD5D /* ChatsCell.swift */; };
+		B7003B70260AD8AB0021AD5D /* ChatsCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7003B6D260AD8AB0021AD5D /* ChatsCell.swift */; };
+		B7003B85260ADA520021AD5D /* RoundedShape.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7003B84260ADA520021AD5D /* RoundedShape.swift */; };
+		B7003B87260ADA520021AD5D /* RoundedShape.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7003B84260ADA520021AD5D /* RoundedShape.swift */; };
+		B7003B92260ADB220021AD5D /* ChatCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7003B91260ADB220021AD5D /* ChatCell.swift */; };
+		B7003B94260ADB220021AD5D /* ChatCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7003B91260ADB220021AD5D /* ChatCell.swift */; };
+		B7056EE4260ADDDC001EBD42 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B7A6A8DD2605A184000969A5 /* Assets.xcassets */; };
 		B74888AD2605DA1100E34AB1 /* UserCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B74888AC2605DA1100E34AB1 /* UserCell.swift */; };
-		B74888AE2605DA1100E34AB1 /* UserCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B74888AC2605DA1100E34AB1 /* UserCell.swift */; };
 		B74888AF2605DA1100E34AB1 /* UserCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B74888AC2605DA1100E34AB1 /* UserCell.swift */; };
 		B74888B72605DA7900E34AB1 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = B74888B62605DA7900E34AB1 /* User.swift */; };
 		B74888B82605DA7900E34AB1 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = B74888B62605DA7900E34AB1 /* User.swift */; };
 		B74888B92605DA7900E34AB1 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = B74888B62605DA7900E34AB1 /* User.swift */; };
 		B74888C12605DBC900E34AB1 /* UsersCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B74888C02605DBC900E34AB1 /* UsersCell.swift */; };
-		B74888C22605DBC900E34AB1 /* UsersCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B74888C02605DBC900E34AB1 /* UsersCell.swift */; };
 		B74888C32605DBC900E34AB1 /* UsersCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B74888C02605DBC900E34AB1 /* UsersCell.swift */; };
 		B74888CE2605DCB700E34AB1 /* ImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B74888CD2605DCB700E34AB1 /* ImageView.swift */; };
-		B74888CF2605DCB700E34AB1 /* ImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B74888CD2605DCB700E34AB1 /* ImageView.swift */; };
 		B74888D02605DCB700E34AB1 /* ImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B74888CD2605DCB700E34AB1 /* ImageView.swift */; };
 		B74888D92605DCEB00E34AB1 /* ImageDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = B74888D82605DCEB00E34AB1 /* ImageDataManager.swift */; };
-		B74888DA2605DCEB00E34AB1 /* ImageDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = B74888D82605DCEB00E34AB1 /* ImageDataManager.swift */; };
 		B74888DB2605DCEB00E34AB1 /* ImageDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = B74888D82605DCEB00E34AB1 /* ImageDataManager.swift */; };
 		B756E6532608771700550064 /* UsersResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = B756E6522608771700550064 /* UsersResponse.swift */; };
 		B756E6542608771700550064 /* UsersResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = B756E6522608771700550064 /* UsersResponse.swift */; };
@@ -97,6 +100,9 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		B7003B6D260AD8AB0021AD5D /* ChatsCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatsCell.swift; sourceTree = "<group>"; };
+		B7003B84260ADA520021AD5D /* RoundedShape.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoundedShape.swift; sourceTree = "<group>"; };
+		B7003B91260ADB220021AD5D /* ChatCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatCell.swift; sourceTree = "<group>"; };
 		B74888AC2605DA1100E34AB1 /* UserCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserCell.swift; sourceTree = "<group>"; };
 		B74888B62605DA7900E34AB1 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		B74888C02605DBC900E34AB1 /* UsersCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UsersCell.swift; sourceTree = "<group>"; };
@@ -157,6 +163,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		B7003B83260ADA430021AD5D /* Shape */ = {
+			isa = PBXGroup;
+			children = (
+				B7003B84260ADA520021AD5D /* RoundedShape.swift */,
+			);
+			path = Shape;
+			sourceTree = "<group>";
+		};
 		B74888A72605D52200E34AB1 /* Model */ = {
 			isa = PBXGroup;
 			children = (
@@ -173,6 +187,8 @@
 			children = (
 				B74888C02605DBC900E34AB1 /* UsersCell.swift */,
 				B74888AC2605DA1100E34AB1 /* UserCell.swift */,
+				B7003B6D260AD8AB0021AD5D /* ChatsCell.swift */,
+				B7003B91260ADB220021AD5D /* ChatCell.swift */,
 			);
 			path = Cell;
 			sourceTree = "<group>";
@@ -192,6 +208,7 @@
 		B74888CB2605DC1800E34AB1 /* Component */ = {
 			isa = PBXGroup;
 			children = (
+				B7003B83260ADA430021AD5D /* Shape */,
 				B74888CC2605DC8C00E34AB1 /* Image */,
 			);
 			path = Component;
@@ -467,6 +484,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B7056EE4260ADDDC001EBD42 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -482,6 +500,7 @@
 				B7A6A8DA2605A184000969A5 /* ChatApp.swift in Sources */,
 				B74888D92605DCEB00E34AB1 /* ImageDataManager.swift in Sources */,
 				B756E68C2608773400550064 /* Host.swift in Sources */,
+				B7003B6E260AD8AB0021AD5D /* ChatsCell.swift in Sources */,
 				B756E6832608773400550064 /* HTTPHeaderValue.swift in Sources */,
 				B756E70326087B4C00550064 /* Item.swift in Sources */,
 				B756E67D2608773400550064 /* HTTPHeaderField.swift in Sources */,
@@ -496,8 +515,10 @@
 				B756E6802608773400550064 /* HTTPMethod.swift in Sources */,
 				B74888C12605DBC900E34AB1 /* UsersCell.swift in Sources */,
 				B756E6F2260879BF00550064 /* Chat.swift in Sources */,
+				B7003B85260ADA520021AD5D /* RoundedShape.swift in Sources */,
 				B756E6862608773400550064 /* URLRequestExtension.swift in Sources */,
 				B74888CE2605DCB700E34AB1 /* ImageView.swift in Sources */,
+				B7003B92260ADB220021AD5D /* ChatCell.swift in Sources */,
 				B7A6A9202605A415000969A5 /* HomeData.swift in Sources */,
 				B756E6C52608773400550064 /* Response.swift in Sources */,
 			);
@@ -507,7 +528,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				B74888CF2605DCB700E34AB1 /* ImageView.swift in Sources */,
 				B756E67E2608773400550064 /* HTTPHeaderField.swift in Sources */,
 				B756E6842608773400550064 /* HTTPHeaderValue.swift in Sources */,
 				B756E6D9260877D100550064 /* LogType.swift in Sources */,
@@ -515,19 +535,16 @@
 				B756E6902608773400550064 /* NetworkManager.swift in Sources */,
 				B756E70426087B4C00550064 /* Item.swift in Sources */,
 				B756E6812608773400550064 /* HTTPMethod.swift in Sources */,
-				B74888AE2605DA1100E34AB1 /* UserCell.swift in Sources */,
 				B756E68D2608773400550064 /* Host.swift in Sources */,
 				B756E6DC260877D100550064 /* Logger.swift in Sources */,
 				B756E68A2608773400550064 /* HTTPStatusCode.swift in Sources */,
 				B756E6C62608773400550064 /* Response.swift in Sources */,
-				B74888DA2605DCEB00E34AB1 /* ImageDataManager.swift in Sources */,
 				B756E6872608773400550064 /* URLRequestExtension.swift in Sources */,
 				B7A6A9212605A415000969A5 /* HomeData.swift in Sources */,
 				B756E67B2608773400550064 /* ServiceURL.swift in Sources */,
 				B756E6F3260879BF00550064 /* Chat.swift in Sources */,
 				B756E6EC2608799E00550064 /* ChatsResponse.swift in Sources */,
 				B7A6A8EC2605A185000969A5 /* ChatTests.swift in Sources */,
-				B74888C22605DBC900E34AB1 /* UsersCell.swift in Sources */,
 				B756E6542608771700550064 /* UsersResponse.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -541,6 +558,7 @@
 				B7A6A8F72605A185000969A5 /* ChatUITests.swift in Sources */,
 				B74888DB2605DCEB00E34AB1 /* ImageDataManager.swift in Sources */,
 				B756E68E2608773400550064 /* Host.swift in Sources */,
+				B7003B70260AD8AB0021AD5D /* ChatsCell.swift in Sources */,
 				B756E6852608773400550064 /* HTTPHeaderValue.swift in Sources */,
 				B756E70526087B4C00550064 /* Item.swift in Sources */,
 				B756E67F2608773400550064 /* HTTPHeaderField.swift in Sources */,
@@ -555,8 +573,10 @@
 				B756E6822608773400550064 /* HTTPMethod.swift in Sources */,
 				B74888C32605DBC900E34AB1 /* UsersCell.swift in Sources */,
 				B756E6F4260879BF00550064 /* Chat.swift in Sources */,
+				B7003B87260ADA520021AD5D /* RoundedShape.swift in Sources */,
 				B756E6882608773400550064 /* URLRequestExtension.swift in Sources */,
 				B74888D02605DCB700E34AB1 /* ImageView.swift in Sources */,
+				B7003B94260ADB220021AD5D /* ChatCell.swift in Sources */,
 				B7A6A9222605A415000969A5 /* HomeData.swift in Sources */,
 				B756E6C72608773400550064 /* Response.swift in Sources */,
 			);

@@ -34,7 +34,7 @@ struct HomeView: View {
                         ForEach(data.items) {
                             switch $0.data {
                             case let data as [User]:    UsersCell(data: data)
-//                            case let data as [Chat]:    ChatsCell(data: data)
+                            case let data as [Chat]:    ChatsCell(data: data)
                             default:                    Text("")
                             }
                         }

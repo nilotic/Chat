@@ -27,7 +27,7 @@ struct UsersCell: View {
             }
             .padding(.horizontal, 38)
         }
-        .frame(height: 50)
+        .frame(height: 78)
     }
     
     // MARK: Private
