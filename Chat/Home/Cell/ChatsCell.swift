@@ -27,7 +27,7 @@ struct ChatsCell: View {
             }
             .padding(.vertical, 61)
         }
-        .clipShape(RoundedShape(radius: 38, corners: [.topLeft, .topRight]))
+        .cornerRadius(38)
     }
 }
 

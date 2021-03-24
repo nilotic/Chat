@@ -40,6 +40,7 @@ struct HomeView: View {
                         }
                     }
                 }
+                .edgesIgnoringSafeArea(.bottom)
                 
                 
                 // Progress
