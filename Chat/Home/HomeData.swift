@@ -12,7 +12,8 @@ final class HomeData: ObservableObject {
     
     // MARK: - Value
     // MARK: Public
-    @Published var items         = [Item]()
+    @Published var users = [User]()
+    @Published var chats = [Chat]()
     @Published var isProgressing = false
     
     // MARK: Private
@@ -25,13 +26,6 @@ final class HomeData: ObservableObject {
         cancellable?.cancel()
         cancellable = Publishers.Zip(requestUsers(), requestChats())
             .eraseToAnyPublisher()
-            .tryMap { (response: (users: [User], chats: [Chat])) -> [Item] in
-                var items = [Item]()
-                items.append(Item(data: response.users))
-                items.append(Item(data: response.chats))
-                
-                return items
-            }
             .receive(on: DispatchQueue.main)
             .sink {
                 switch $0 {
@@ -39,14 +33,18 @@ final class HomeData: ObservableObject {
                 case .failure(let error):   log(.error, error.localizedDescription)
                 }
                 
-            } receiveValue: { [weak self] items in
+            } receiveValue: { [weak self] (response: (users: [User], chats: [Chat])) in
                 guard let self = self else { return }
                 self.isProgressing = false
 
-                guard self.items != items else { return }
-                self.items = items
+                if self.users != response.users {
+                    self.users = response.users
+                }
+                
+                if self.chats != response.chats {
+                    self.chats = response.chats
+                }
             }
-        
     }
     
     // MARK: Private

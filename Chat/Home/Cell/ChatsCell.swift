@@ -11,7 +11,7 @@ struct ChatsCell: View {
     
     // MARK: - Value
     // MARK: Public
-    let data: [Chat]
+    @Binding var data: [Chat]
     
     
     // MARK: - View
@@ -21,8 +21,10 @@ struct ChatsCell: View {
             Color(.white)
             
             LazyVStack(spacing: 43) {
-                ForEach(data) {
-                    ChatCell(data: $0)
+                ForEach(data.indices, id: \.self) { index in
+                    NavigationLink(destination: ChatView(data: $data[index])) {
+                        ChatCell(data: data[index])
+                    }
                 }
             }
             .padding(.vertical, 61)
@@ -35,8 +37,8 @@ struct ChatsCell: View {
 struct ChatsCell_Previews: PreviewProvider {
     
     static var previews: some View {
-        let view = ChatsCell(data: [.placeholder, .placeholder, .placeholder, .placeholder, .placeholder,
-                                    .placeholder, .placeholder, .placeholder, .placeholder, .placeholder])
+        let view = ChatsCell(data: .constant([.placeholder, .placeholder, .placeholder, .placeholder, .placeholder,
+                                              .placeholder, .placeholder, .placeholder, .placeholder, .placeholder]))
         
         Group {
             view

@@ -31,12 +31,12 @@ struct HomeView: View {
                 
                 ScrollView {
                     LazyVStack(spacing: 0) {
-                        ForEach(data.items) {
-                            switch $0.data {
-                            case let data as [User]:    UsersCell(data: data)
-                            case let data as [Chat]:    ChatsCell(data: data)
-                            default:                    Text("")
-                            }
+                        if !data.users.isEmpty {
+                            UsersCell(data: data.users)
+                        }
+                        
+                        if !data.chats.isEmpty {
+                            ChatsCell(data: $data.chats)
                         }
                     }
                 }

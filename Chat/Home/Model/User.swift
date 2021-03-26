@@ -28,13 +28,22 @@ extension User: Equatable {
     }
 }
 
-extension User: Decodable  {
+extension User: Codable {
     
     private enum Key: String, CodingKey {
         case id
         case firstName
         case lastName
         case imageURL
+    }
+    
+    func encode(to encoder: Encoder) throws {
+        var container = encoder.container(keyedBy: Key.self)
+
+        do { try container.encode(id,        forKey: .id) }        catch { throw error }
+        do { try container.encode(firstName, forKey: .firstName) } catch { throw error }
+        do { try container.encode(lastName,  forKey: .lastName) }  catch { throw error }
+        do { try container.encode(imageURL,  forKey: .imageURL) }  catch { throw error }
     }
     
     init(from decoder: Decoder) throws {
