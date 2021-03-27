@@ -15,10 +15,11 @@ final class ChatData: ObservableObject {
     @Binding var chat: Chat
     
     @Published var message = ""
-    @Published var messages = [Message]()
+    @Published var items = [Item]()
     @Published var isProgressing = false
     
-    let user: User = .placeholder
+    @Published var isAlertPresented = false
+    var error: Error? = nil
     
     var name: String {
         var components = PersonNameComponents()
@@ -37,33 +38,46 @@ final class ChatData: ObservableObject {
         return encoder
     }()
     
+    private lazy var decoder: JSONDecoder = {
+        let decoder = JSONDecoder()
+        decoder.dateDecodingStrategy = .iso8601
+        return decoder
+    }()
+    
     
     // MARK: - Initializer
     init(data: Binding<Chat>) {
         _chat = data
-        
-        task.resume()
-        setReceiver()
     }
     
     
     // MARK: - Function
     // MARK: Public
+    func connect() {
+        task.resume()
+        setReceiver()
+    }
+    
     func send() {
         guard message != "" else { return }
-        let message = Message(id: UUID(), text: self.message, user: .placeholder, date: Date())
+        let data = Message(id: UUID(), text: self.message, user: .placeholder, date: Date())
+        message = ""
        
-        guard let data = try? encoder.encode(message) else { return }
-        
-        task.send(.data(data)) { [weak self] error in
-            guard let self = self else { return }
-            
-            guard error == nil else {
-                log(.error, error?.localizedDescription ?? "")
-                return
+        do {
+            task.send(.data(try encoder.encode(data))) { [weak self] error in
+                guard let self = self else { return }
+                
+                guard error == nil else {
+                    log(.error, error?.localizedDescription ?? "")
+                    return
+                }
+                
+                let item = Item(data: MyMessage(data: data))
+                DispatchQueue.main.async { self.items.append(item) }
             }
             
-            DispatchQueue.main.async { self.messages.append(message) }
+        } catch {
+            log(.error, error.localizedDescription)
         }
     }
     
@@ -76,20 +90,30 @@ final class ChatData: ObservableObject {
             case .success(let data):
                 switch data {
                 case .data(let data):
-                    log(.info, String(data: data, encoding: .utf8))
+                    do {
+                        let message = try self.decoder.decode(Message.self, from: data)
+                        let item = Item(data: UserMessage(id: UUID(), text: "Echo :  \(message.text)", user: User.random, date: Date()))
+                            
+                        DispatchQueue.main.async { self.items.append(item) }
+                    
+                    } catch {
+                        log(.error, error.localizedDescription)
+                    }
                 
                 case .string(let data):
-                    log(.info, data)
+                    let item = Item(data: UserMessage(id: UUID(), text: "Echo :  \(data)", user: User.random, date: Date()))
+                    DispatchQueue.main.async { self.items.append(item) }
                 
                 default:
                   break
                 }
                 
+                self.setReceiver()
+                
             case .failure(let error):
-                log(.error, error.localizedDescription)
+                self.error = error
+                self.isAlertPresented = true
             }
-    
-            self.setReceiver()
         }
     }
 }

@@ -35,7 +35,6 @@ struct ImageView: View {
             if isProgressing {
                 ProgressView()
                     .progressViewStyle(CircularProgressViewStyle())
-                    .scaleEffect(1, anchor: .center)
             }
         }
         .onAppear {

@@ -23,21 +23,30 @@ struct ChatView: View {
     // MARK: - View
     // MARK: Public
     var body: some View {
-        NavigationView {
-            VStack {
+        ZStack {
+            VStack(spacing: 10) {
                 // Messages
                 ScrollView {
-                    ForEach(data.messages) {
-                        MessageCell(data: $0)
+                    LazyVStack(spacing: 15) {
+                        Spacer()
+                            .frame(height: 30)
+                        
+                        ForEach(data.items) {
+                            switch $0.data {
+                            case let data as MyMessage:     MyMessageCell(data: data)
+                            case let data as UserMessage:   UserMessageCell(data: data)
+                            default:                        Text("")
+                            }
+                        }
                     }
                 }
-            
+                
                 Spacer()
                 
                 // TextField
                 textField
             }
-            
+                        
             // Progress
             if data.isProgressing {
                 ProgressView()
@@ -45,9 +54,15 @@ struct ChatView: View {
                     .scaleEffect(1.2, anchor: .center)
             }
         }
+        .alert(isPresented: $data.isAlertPresented) {
+            Alert(title: Text("Error"), message: Text(data.error?.localizedDescription ?? ""), dismissButton: .default(Text("OK")))
+        }
         .navigationTitle(data.name)
         .navigationBarTitleDisplayMode(.inline)
         .navigationBarItems(trailing: barButtonItems)
+        .onAppear {
+            data.connect()
+        }
     }
     
     // MARK: Private
@@ -59,12 +74,12 @@ struct ChatView: View {
                     
                     Image(systemName: "phone.fill")
                         .resizable()
-                        .frame(width: 13, height: 13)
+                        .frame(width: 12, height: 12)
                         .foregroundColor(.white)
                 }
             }
-            .frame(width: 32, height: 32)
-            .cornerRadius(16)
+            .frame(width: 30, height: 30)
+            .cornerRadius(15)
 
             Button(action: { }) {
                 ZStack {
@@ -72,12 +87,12 @@ struct ChatView: View {
                     
                     Image(systemName: "video.fill")
                         .resizable()
-                        .frame(width: 13, height: 13)
+                        .frame(width: 14, height: 10)
                         .foregroundColor(.white)
                 }
             }
-            .frame(width: 32, height: 32)
-            .cornerRadius(16)
+            .frame(width: 30, height: 30)
+            .cornerRadius(15)
         }
     }
     
@@ -95,11 +110,7 @@ struct ChatView: View {
                 .padding(.horizontal, 21)
             
                 
-                Button(action: {
-                    UIApplication.shared.sendAction(#selector(UIResponder.resignFirstResponder), to: nil, from: nil, for: nil)
-                    data.send()
-                    
-                }) {
+                Button(action: { data.send() }) {
                     ZStack {
                         Color("blue400")
                         

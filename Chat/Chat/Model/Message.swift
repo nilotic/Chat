@@ -60,7 +60,7 @@ extension Message: Codable  {
 extension Message {
     
     static var placeholder: Message {
-        Message(id: UUID(), text: "Hey there! What's up?", user: .placeholder, date: Date())
+        Message(id: UUID(), text: "Nothing. Just chilling and watching YouTube. What about you?", user: .placeholder, date: Date())
     }
 }
 #endif

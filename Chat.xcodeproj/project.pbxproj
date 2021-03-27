@@ -88,8 +88,16 @@
 		B7A6A9202605A415000969A5 /* HomeData.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7A6A91F2605A415000969A5 /* HomeData.swift */; };
 		B7A6A9212605A415000969A5 /* HomeData.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7A6A91F2605A415000969A5 /* HomeData.swift */; };
 		B7A6A9222605A415000969A5 /* HomeData.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7A6A91F2605A415000969A5 /* HomeData.swift */; };
-		B7D1A91D260D8EF300E33D40 /* MessageCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7D1A91C260D8EF300E33D40 /* MessageCell.swift */; };
-		B7D1A91E260D8EF300E33D40 /* MessageCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7D1A91C260D8EF300E33D40 /* MessageCell.swift */; };
+		B7B0B892260EE65700F2FCC3 /* UserMessageCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7B0B891260EE65700F2FCC3 /* UserMessageCell.swift */; };
+		B7B0B893260EE65700F2FCC3 /* UserMessageCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7B0B891260EE65700F2FCC3 /* UserMessageCell.swift */; };
+		B7B0B898260EE69500F2FCC3 /* UserMessage.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7B0B897260EE69500F2FCC3 /* UserMessage.swift */; };
+		B7B0B899260EE69500F2FCC3 /* UserMessage.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7B0B897260EE69500F2FCC3 /* UserMessage.swift */; };
+		B7B0B89A260EE69500F2FCC3 /* UserMessage.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7B0B897260EE69500F2FCC3 /* UserMessage.swift */; };
+		B7B0B8A0260EE70900F2FCC3 /* MyMessage.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7B0B89F260EE70900F2FCC3 /* MyMessage.swift */; };
+		B7B0B8A1260EE70900F2FCC3 /* MyMessage.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7B0B89F260EE70900F2FCC3 /* MyMessage.swift */; };
+		B7B0B8A2260EE70900F2FCC3 /* MyMessage.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7B0B89F260EE70900F2FCC3 /* MyMessage.swift */; };
+		B7D1A91D260D8EF300E33D40 /* MyMessageCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7D1A91C260D8EF300E33D40 /* MyMessageCell.swift */; };
+		B7D1A91E260D8EF300E33D40 /* MyMessageCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7D1A91C260D8EF300E33D40 /* MyMessageCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -149,7 +157,10 @@
 		B7A6A8F82605A185000969A5 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		B7A6A90F2605A30E000969A5 /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
 		B7A6A91F2605A415000969A5 /* HomeData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeData.swift; sourceTree = "<group>"; };
-		B7D1A91C260D8EF300E33D40 /* MessageCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessageCell.swift; sourceTree = "<group>"; };
+		B7B0B891260EE65700F2FCC3 /* UserMessageCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserMessageCell.swift; sourceTree = "<group>"; };
+		B7B0B897260EE69500F2FCC3 /* UserMessage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserMessage.swift; sourceTree = "<group>"; };
+		B7B0B89F260EE70900F2FCC3 /* MyMessage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyMessage.swift; sourceTree = "<group>"; };
+		B7D1A91C260D8EF300E33D40 /* MyMessageCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyMessageCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -303,6 +314,7 @@
 		B7828168260B124500D4FF75 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				B7B0B89E260EE6FC00F2FCC3 /* Cell */,
 				B70F9BCA260C7484005B20C6 /* Message.swift */,
 			);
 			path = Model;
@@ -311,7 +323,8 @@
 		B7828169260B124B00D4FF75 /* Cell */ = {
 			isa = PBXGroup;
 			children = (
-				B7D1A91C260D8EF300E33D40 /* MessageCell.swift */,
+				B7D1A91C260D8EF300E33D40 /* MyMessageCell.swift */,
+				B7B0B891260EE65700F2FCC3 /* UserMessageCell.swift */,
 			);
 			path = Cell;
 			sourceTree = "<group>";
@@ -397,6 +410,15 @@
 				B7828168260B124500D4FF75 /* Model */,
 			);
 			path = Chat;
+			sourceTree = "<group>";
+		};
+		B7B0B89E260EE6FC00F2FCC3 /* Cell */ = {
+			isa = PBXGroup;
+			children = (
+				B7B0B89F260EE70900F2FCC3 /* MyMessage.swift */,
+				B7B0B897260EE69500F2FCC3 /* UserMessage.swift */,
+			);
+			path = Cell;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -540,10 +562,12 @@
 				B756E70326087B4C00550064 /* Item.swift in Sources */,
 				B756E67D2608773400550064 /* HTTPHeaderField.swift in Sources */,
 				B7A6A9102605A30E000969A5 /* HomeView.swift in Sources */,
-				B7D1A91D260D8EF300E33D40 /* MessageCell.swift in Sources */,
+				B7D1A91D260D8EF300E33D40 /* MyMessageCell.swift in Sources */,
 				B756E6EB2608799E00550064 /* ChatsResponse.swift in Sources */,
 				B756E67A2608773400550064 /* ServiceURL.swift in Sources */,
+				B7B0B892260EE65700F2FCC3 /* UserMessageCell.swift in Sources */,
 				B70F9BCB260C7484005B20C6 /* Message.swift in Sources */,
+				B7B0B898260EE69500F2FCC3 /* UserMessage.swift in Sources */,
 				B74888AD2605DA1100E34AB1 /* UserCell.swift in Sources */,
 				B756E6DB260877D100550064 /* Logger.swift in Sources */,
 				B74888B72605DA7900E34AB1 /* User.swift in Sources */,
@@ -556,6 +580,7 @@
 				B7003B85260ADA520021AD5D /* RoundedShape.swift in Sources */,
 				B756E6862608773400550064 /* URLRequestExtension.swift in Sources */,
 				B74888CE2605DCB700E34AB1 /* ImageView.swift in Sources */,
+				B7B0B8A0260EE70900F2FCC3 /* MyMessage.swift in Sources */,
 				B7003B92260ADB220021AD5D /* ChatCell.swift in Sources */,
 				B7A6A9202605A415000969A5 /* HomeData.swift in Sources */,
 				B756E6C52608773400550064 /* Response.swift in Sources */,
@@ -573,11 +598,13 @@
 				B74888B82605DA7900E34AB1 /* User.swift in Sources */,
 				B756E6902608773400550064 /* NetworkManager.swift in Sources */,
 				B756E70426087B4C00550064 /* Item.swift in Sources */,
+				B7B0B8A1260EE70900F2FCC3 /* MyMessage.swift in Sources */,
 				B756E6812608773400550064 /* HTTPMethod.swift in Sources */,
 				B70F9BCC260C7484005B20C6 /* Message.swift in Sources */,
 				B756E68D2608773400550064 /* Host.swift in Sources */,
 				B756E6DC260877D100550064 /* Logger.swift in Sources */,
 				B756E68A2608773400550064 /* HTTPStatusCode.swift in Sources */,
+				B7B0B899260EE69500F2FCC3 /* UserMessage.swift in Sources */,
 				B756E6C62608773400550064 /* Response.swift in Sources */,
 				B756E6872608773400550064 /* URLRequestExtension.swift in Sources */,
 				B7A6A9212605A415000969A5 /* HomeData.swift in Sources */,
@@ -604,10 +631,12 @@
 				B756E70526087B4C00550064 /* Item.swift in Sources */,
 				B756E67F2608773400550064 /* HTTPHeaderField.swift in Sources */,
 				B7A6A9112605A30E000969A5 /* HomeView.swift in Sources */,
-				B7D1A91E260D8EF300E33D40 /* MessageCell.swift in Sources */,
+				B7D1A91E260D8EF300E33D40 /* MyMessageCell.swift in Sources */,
 				B756E6ED2608799E00550064 /* ChatsResponse.swift in Sources */,
 				B756E67C2608773400550064 /* ServiceURL.swift in Sources */,
+				B7B0B893260EE65700F2FCC3 /* UserMessageCell.swift in Sources */,
 				B70F9BCD260C7484005B20C6 /* Message.swift in Sources */,
+				B7B0B89A260EE69500F2FCC3 /* UserMessage.swift in Sources */,
 				B74888AF2605DA1100E34AB1 /* UserCell.swift in Sources */,
 				B756E6DD260877D100550064 /* Logger.swift in Sources */,
 				B74888B92605DA7900E34AB1 /* User.swift in Sources */,
@@ -620,6 +649,7 @@
 				B7003B87260ADA520021AD5D /* RoundedShape.swift in Sources */,
 				B756E6882608773400550064 /* URLRequestExtension.swift in Sources */,
 				B74888D02605DCB700E34AB1 /* ImageView.swift in Sources */,
+				B7B0B8A2260EE70900F2FCC3 /* MyMessage.swift in Sources */,
 				B7003B94260ADB220021AD5D /* ChatCell.swift in Sources */,
 				B7A6A9222605A415000969A5 /* HomeData.swift in Sources */,
 				B756E6C72608773400550064 /* Response.swift in Sources */,
