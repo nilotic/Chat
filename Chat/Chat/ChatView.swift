@@ -27,15 +27,24 @@ struct ChatView: View {
             VStack(spacing: 10) {
                 // Messages
                 ScrollView {
-                    LazyVStack(spacing: 15) {
-                        Spacer()
-                            .frame(height: 30)
-                        
-                        ForEach(data.items) {
-                            switch $0.data {
-                            case let data as MyMessage:     MyMessageCell(data: data)
-                            case let data as UserMessage:   UserMessageCell(data: data)
-                            default:                        Text("")
+                    ScrollViewReader { proxy in
+                        LazyVStack(spacing: 15) {
+                            Spacer()
+                                .frame(height: 30)
+                            
+                            ForEach(Array(data.items.enumerated()), id: \.element) { i, item in
+                                switch item.data {
+                                case let data as MyMessage:     MyMessageCell(data: data).id(i)
+                                case let data as UserMessage:   UserMessageCell(data: data).id(i)
+                                default:                        Text("").id(i)
+                                }
+                            }
+                        }
+                        .onChange(of: data.items) { items in
+                            guard !items.isEmpty else { return }
+                            
+                            withAnimation {
+                                proxy.scrollTo(items.count - 1, anchor: .bottom)
                             }
                         }
                     }

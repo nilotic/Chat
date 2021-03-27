@@ -94,7 +94,9 @@ final class ChatData: ObservableObject {
                         let message = try self.decoder.decode(Message.self, from: data)
                         let item = Item(data: UserMessage(id: UUID(), text: "Echo :  \(message.text)", user: User.random, date: Date()))
                             
-                        DispatchQueue.main.async { self.items.append(item) }
+                        DispatchQueue.main.asyncAfter(deadline: .now() + 0.5) {
+                            self.items.append(item)
+                        }
                     
                     } catch {
                         log(.error, error.localizedDescription)
